@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sd's Tools</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        alert("IM FUCKING alive ;)")
+amt=0
+
+  function startProcess() {
+    ip=document.getElementById("input1").value
+    duration=document.getElementById("input2").value
+
+    if (ip == ""){
+        alert("Please enter an IP")
+        return
+    }
+    if (duration == ""){
+        alert("Please enter a duration")
+        return
+    }
+
+    if (amt > 1){
+        alert("You can only run one process at a time")
+        return
+    }
+    amt=amt+1
+
+    // Simulating a process
+    var processName =  `Process: Attack for  ${duration} seconds on ${ip} | Status: Running`;
+    
+    // Update the content to display the process
+    document.getElementById("processMessage").style.display = "none";
+
+    var processList = document.getElementById("processList");
+    var newProcessItem = document.createElement("li");
+    newProcessItem.textContent = processName;
+    newProcessItem.id="process"
+    processList.appendChild(newProcessItem);
+
+    // start attack, attack, attack, attack
+    // this feels so illegal. its like stressthem.to, it feels illegal but its perfectly legal ( as long as your using it on your own computer )
+      
+}
+
+// wait how do you ping in js?
+
+function attack(ip, duration) {
+    // spamming the ip with ajax
+    dur=duration
+    setInterval(function(){
+        dur=dur-1
+    },1000)
+    while (dur > 0) {
+        // ajax the living fuck out of le ip
+
+        ajax = new XMLHttpRequest();
+        ajax.open('GET', `http://${ip}/`);
+        ajax.send();
+        // yay
+    }
+    amt=0
+    document.getElementById("process").innerHTML=`Process: Attack for  ${duration} seconds on ${ip} | Status: Terminated ( Timeout )`
+
+}
+
+// haha, funny js go brr
+
+// Why am i like this? I need a mental evaluation before i go into public and start reading javascript like a scripture.
+
+
+    </script>
+</head>
+<body>
+
+    <div class="stars">
+        <!-- Generate stars dynamically with JavaScript -->
+      </div>
+
+    <div class="top-bar">
+        <a>SDDT Tools</a>
+      </div> 
+
+      <div class="panel">
+        <div class="input-group">
+          <label for="input1">IP Address:</label>
+          <input type="text" id="input1" placeholder="Enter the targets IP">
+        </div>
+    
+        <div class="input-group">
+          <label for="input2">Duration (Seconds):</label>
+          <input type="text" id="input2" placeholder="Enter the duration ( Maximum 60 seconds)"></input>
+        </div>
+    
+        <!-- Onclick and listners have betrayed me, i must use inputs instead-->
+
+        <button class="run-button" onclick="startProcess()">Start Attack</button>
+      </div>
+
+      <div class="container">
+        <p id="processMessage">No processes going</p>
+        <ul id="processList"></ul>
+      </div>
+
+    <div>
+        <p>
+            Disclaimer: We/I am not responsible for any damage done nor take liability in any way. This is purly for the funny. Dont use this on legitimate shit besides yourself.
+        </p>
+    </div>
+
+    <!-- import our beloved ( fucking hated ) script -->
+
+
+ <body>
+  <div id="space">
+   <div class="stars"></div>
+   <div class="stars"></div>
+   <div class="stars"></div>
+   <div class="stars"></div>
+   <div class="stars"></div>
+  </div>
+    
+
+</body>
+</html>

